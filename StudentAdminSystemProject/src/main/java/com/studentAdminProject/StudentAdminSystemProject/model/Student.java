@@ -18,6 +18,7 @@ public class Student {
     private String state;
     private String zipCode;
     private String countryCode;
+    private int graduationClass;
 
     public int getId() {
         return id;
@@ -53,6 +54,13 @@ public class Student {
 
     public String getStreetAddress() {
         return streetAddress;
+    }
+    public int getGraduationClass() {
+        return graduationClass;
+    }
+
+    public void setGraduationClass(int graduationClass) {
+        this.graduationClass = graduationClass;
     }
 
     public void setStreetAddress(String streetAddress) {
