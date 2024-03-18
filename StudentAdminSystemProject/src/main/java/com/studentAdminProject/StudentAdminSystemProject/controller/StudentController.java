@@ -1,8 +1,10 @@
 package com.studentAdminProject.StudentAdminSystemProject.controller;
-
+import java.util.List;
 import com.studentAdminProject.StudentAdminSystemProject.model.Student;
 import com.studentAdminProject.StudentAdminSystemProject.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -19,8 +21,8 @@ public class StudentController {
         return true;
     }
 
-    @GetMapping("./getStudent")
-    public boolean getStudent(){
-        return false;
+    @GetMapping("/getAllStudents")
+    public ResponseEntity<List<Student>> getStudents(){
+        return new ResponseEntity<>(this.studentService.getStudents(), HttpStatus.OK);
     }
 }
