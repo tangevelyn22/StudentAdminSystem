@@ -27,6 +27,11 @@ public class Student {
     @Column(name = "graduation_class", nullable = false)
     private int graduationClass;
 
+    @ManyToOne(targetEntity = Department.class)
+    @JoinColumn(name = "dept_code", nullable = false)
+    private String departmentCode;
+
+
     public int getId() {
         return id;
     }
@@ -89,6 +94,16 @@ public class Student {
 
     public void setState(String state) {
         this.state = state;
+    }
+
+    @Column(name = "dept_code")
+    public String getDepartmentCode() {
+        return departmentCode;
+    }
+
+    @Column(name = "dept_code")
+    public void setDepartmentCode(String departmentCode) {
+        this.departmentCode = departmentCode;
     }
 
     @Column(name = "zip_code")
